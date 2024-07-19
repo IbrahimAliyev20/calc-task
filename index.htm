@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(120, 201, 201);
+    }
+    .calc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        gap: 20px;
+    }
+    .basliq h4{
+        font-size: 4rem;
+        font-weight: 100;
+    }
+    .rqm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+        gap: 10px;
+    }
+    .rqm input{
+        width: 500px;
+        font-size: 2rem;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+    }
+    .rqm input:hover{
+        background-color: aliceblue;
+        border-radius: 7px;
+    }
+    .rqm button{
+        font-size: 2.1rem;
+        padding: 11px 22px;
+    }
+    .rqm button:hover{
+        background-color: darkred;
+        color: white;
+    }
+    .ntc h6{
+        font-size: 2.6rem;
+    }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <div class="basliq"><h4>Hesablama</h4></div>
+        <div class="rqm">
+            <input type="text" id="a1">
+            <input type="text" id="a2">
+            <input type="text" id="a3">
+            <button onclick="brb()">Click</button>
+        </div>
+        <div class="ntc">
+            <h6>Cəm<span id="cm">-</span></h6>
+            <h6>Orta<span id="oa">-</span></h6>
+            <h6>Hasil<span id="hl">-</span></h6>
+        </div>
+    </div>
+    <script>
+        let a1 = document.getElementById("a1");
+        let a2 = document.getElementById("a2");
+        let a3 = document.getElementById("a3");
+        let hl = document.getElementById("hl")
+        let oa = document.getElementById("oa")
+        let cm = document.getElementById("cm")
+    
+    
+        function brb(){
+            cm.innerHTML = +a1.value + +a2.value + +a3.value
+            oa.innerHTML = cm.innerHTML / 3
+            hl.innerHTML = a1.value * a2.value * a3.value
+        }
+    </script>
+</body>
+</html>
